@@ -1,0 +1,111 @@
+
+This is a sample Postman collection file to test all API endpoints. You can create and export it directly from Postman.
+
+```json
+{
+  "info": {
+    "name": "Social Network API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Signup",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"newuser\", \"email\": \"newuser@example.com\", \"password\": \"newpass\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/signup/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Search",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token YOUR_AUTH_TOKEN"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/search/?q=test",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "test"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Send Friend Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token YOUR_AUTH_TOKEN"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"to_user\": 2}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/friend-request/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "friend-request"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "List Friends",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token YOUR_AUTH_TOKEN"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/api/friends/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "friends"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
